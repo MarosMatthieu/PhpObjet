@@ -4,7 +4,8 @@ class IndividuDAO {
 	private $bdd;
 	
 	
-	//CRUD de INDIVIDU + LIST individu
+	//CRUD de INDIVIDU  /DONE
+	// LIST individu
 	
 	
 	function __construct($bdd) {
