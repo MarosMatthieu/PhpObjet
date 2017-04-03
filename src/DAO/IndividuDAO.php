@@ -32,22 +32,25 @@ class IndividuDAO {
 		return $lstIndiv;
 	}
 
-	public function addIndiv($id) {
-//		$id = ( int ) $id;
-//	
-//		$q = $this->_db->query ( 'SELECT id, nom, prenom, age ,shortDesc FROM INDIVIDU WHERE id = ' . $id );
-//		$donnees = $q->fetch ( PDO::FETCH_ASSOC );
+	public function addIndiv($donnes) {
+		$nom = $donnes[0];
+		$prenom = $donnes[1];
+		$age = $donnes[2];
+		$shortDesc = $donnes[3];
+		
+		$q = $this->_db->query ( 'INSERT INTO  INDIVIDU ( nom, prenom, age ,shortDesc) 
+								  VALUES ('.$donnes[0].', '. $donnes[1].', '.$donnes[2].', '.$donnes[3].');'  );
+		
 	
-//		return new News ( $donnees ['id'], $donnees ['nom'], $donnees ['prenom'], $donnees ['age'], $donnees ['shortDesc'] );
+
 	}
 
 	public function DelIndiv($id) {
-//		$id = ( int ) $id;
+		$id = ( int ) $id;
 	
-//		$q = $this->_db->query ( 'SELECT id, nom, prenom, age ,shortDesc FROM INDIVIDU WHERE id = ' . $id );
-//		$donnees = $q->fetch ( PDO::FETCH_ASSOC );
+		$q = $this->_db->query ( 'SELECT id, nom, prenom, age ,shortDesc FROM INDIVIDU WHERE id = ' . $id );
+		
 	
-//		return new News ( $donnees ['id'], $donnees ['nom'], $donnees ['prenom'], $donnees ['age'], $donnees ['shortDesc'] );
 	}
 
 }
