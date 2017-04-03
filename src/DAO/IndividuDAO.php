@@ -20,6 +20,7 @@ class IndividuDAO {
 		return new News ( $donnees ['id'], $donnees ['nom'], $donnees ['prenom'], $donnees ['age'], $donnees ['shortDesc'] );
 	}
 		
+	
 	public function getListIndiv() {
 		$lstIndiv = [ ];
 		
@@ -32,6 +33,7 @@ class IndividuDAO {
 		return $lstIndiv;
 	}
 
+	
 	public function addIndiv($donnes) {
 		$nom = $donnes[0];
 		$prenom = $donnes[1];
@@ -40,21 +42,15 @@ class IndividuDAO {
 		
 		$q = $this->_db->query ( 'INSERT INTO  INDIVIDU ( nom, prenom, age ,shortDesc) 
 								  VALUES ('.$donnes[0].', '. $donnes[1].', '.$donnes[2].', '.$donnes[3].');'  );
-		
-	
-
 	}
 
 	public function DelIndiv($id) {
 		$id = ( int ) $id;
 	
-		$q = $this->_db->query ( 'SELECT id, nom, prenom, age ,shortDesc FROM INDIVIDU WHERE id = ' . $id );
-		
-	
+		$q = $this->_db->query ( 'DELETE * FROM INDIVIDU WHERE id = ' . $id );
 	}
 
+	
+	
 }
-
-
-
 ?>
