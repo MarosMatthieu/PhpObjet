@@ -5,6 +5,7 @@
  * @author 15marosm
  */
 class Individu {
+	
 	/***
 	 * Propriété de la class Individu
 	 */
@@ -40,7 +41,7 @@ class Individu {
 	{
 		return $this->indivPrenom;
 	}
-	public function setIndivNom($indivPrenom)
+	public function setIndivPrenom($indivPrenom)
 	{
 		$this->indivPrenom = $indivPrenom ;
 	}
@@ -84,9 +85,7 @@ class Individu {
 	}
 	
 	
-	
-	//show indiv
-	
+
 
 }
 

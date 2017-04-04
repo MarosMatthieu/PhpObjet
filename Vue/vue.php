@@ -1,37 +1,41 @@
-<html>
-    <head>
-        <title>Les news</title>
-    </head>
-
-    <body>
-        <h1>Les news</h1>
-        <div id="news">
-            <?php              
-                //Affichage sujet / Date 
-                //foreach ($ONews as $new):
-                    echo "<h1>".$ONews->getTitre()." postee le ".$ONews->getDate()."</h1>";
-                    echo "<p>". $ONews->getTexte_nouvelle()."</p>";
-                //endforeach ;
-
-                //Affichage du Nb de commentaire relatif a la nouvelle
-                echo "<h3>".$nbre_comment." commentaires relatifs a cette nouvelle</h3>";
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 
 
-           
-                //affichage NOM / DATE / COMMENTAIRE --- Recuperation dans un TABLEAU de commentaire
-                foreach ($comments as $OCommentaire):
-                    echo "<h3>".$OCommentaire['auteur']." a ecrit le ".$OCommentaire['date']."</h3>";
-                    echo "<p>".$OCommentaire['texte']."</p>";
-                endforeach ;
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" />
+	<meta http-equiv="content-language" content="fr" />
+<!--<link href="../css/styly.css" rel="stylesheet" />   -->	
+	<title>Gestion d'une equipe</title>
+</head>
 
-            ?>
-        
-        <form method="POST" action="<?php echo $_SERVER['SCRIPT_NAME'] ?>" name="ajoutcomment">
-            <input type="hidden" name="news_id" value="<?php echo $news_id?>">
-            <input type="text" name="auteur" value="Votre nom"><br />
-            <textarea name="texte" rows="5" cols="10">Saisissez votre commentaire</textarea><br />
-            <input type="submit" name="submit" value="Envoyer">
-        </form>
-    </div>
-    </body>
+<body class="body">
+	<main class="main">
+	
+	<h1>Gestion d'Equipe</h1>
+	
+	
+	<form id="formulaire" action="Index.php" method="get">
+		<fieldset>
+			<legend> Ajout d'un Individu a la base : </legend>
+			
+				<label for="nom">nom du joueur : </label>
+				<input	type="text" name="nom" id="nom" />
+				
+				<label for="prenom">prenom du joueur : </label>
+				<input	type="text" name="prenom" id="prenom" />	
+				
+				<label for="age">age du joueur : </label>
+				<input	type="text" name="age" id="age" />	
+				
+				<label for="shortDesc">Description courte du joueur : </label>
+				<input	type="text" name="shortDesc" id="shortDesc" />		
+				
+					
+		</fieldset>
+		<p>
+			<input id="envoyer" name="envoyer" type="submit" value="Supprimer"	title="" />
+		</p>
+	</form>
+</body>
 </html>
